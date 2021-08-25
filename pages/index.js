@@ -8,21 +8,19 @@ export default function Home() {
         <title>CrazySuitcases</title>
         <link rel="icon" href="/images/logo.png" />
 
-        <meta property="og:title" content="Boring Bananas Co." key="ogtitle" />
-        <meta property="og:description" content="Here at Boring Bananas company, we specialise in the world's finest digital bananas. We've put together a team spanning 3 continents, to bring you some of the most ‍NUTRITIOUS and DELICIOUS
-bananas out known to man." key="ogdesc" />
+        <meta property="og:title" content="Crazy Suit Cases" key="ogtitle" />
+        <meta property="og:description" content="Ouch! What is it? It's a runaway suitcase! He needs a new home." key="ogdesc" />
         <meta property="og:type" content="website" key="ogtype" />
-        <meta property="og:url" content="https://boringbananas.co/" key="ogurl"/>
-        <meta property="og:image" content="https://boringbananas.co/images/Hola.gif" key="ogimage"/>
-        <meta property="og:site_name" content="https://boringbananas.co/" key="ogsitename" />
+        <meta property="og:url" content="https://crazysuitcases.club/" key="ogurl"/>
+        <meta property="og:image" content="https://crazysuitcases.club/images/suit.jpg" key="ogimage"/>
+        <meta property="og:site_name" content="https://crazysuitcases.club/" key="ogsitename" />
 
         <meta name="twitter:card" content="summary_large_image" key="twcard"/>
         <meta property="twitter:domain" content="boringbananas.co" key="twdomain" />
-        <meta property="twitter:url" content="https://boringbananas.co/" key="twurl" />
-        <meta name="twitter:title" content="Boring Bananas Co." key="twtitle" />
-        <meta name="twitter:description" content="Here at boring Bananas company, we specialise in the world's finest digital bananas. We've put together a team spanning 3 continents, to bring you some of the most ‍NUTRITIOUS and DELICIOUS
-bananas out known to man." key="twdesc" />
-        <meta name="twitter:image" content="https://boringbananas.co/images/Hola.gif" key="twimage" />
+        <meta property="twitter:url" content="https://crazysuitcases.club/" key="twurl" />
+        <meta name="twitter:title" content="Crazy Suit Cases" key="twtitle" />
+        <meta name="twitter:description" content="Ouch! What is it? It's a runaway suitcase! He needs a new home." key="twdesc" />
+        <meta name="twitter:image" content="https://crazysuitcases.club/images/suit.jpg" key="twimage" />
       </Head>
 
       {/* Navigation */}
@@ -30,7 +28,7 @@ bananas out known to man." key="twdesc" />
           <div className="flex items-center justify-between w-full border-b-2	pb-6">
             <nav className="flex flex-wrap flex-row py-6 justify-around GardeneStone">
               <a href="#about" className="text-4xl text-white hover:text-black m-6">About</a>
-              <a href="" className="text-4xl text-white hover:text-black m-6">MINT!</a>
+              <a href="/mint" className="text-4xl text-white hover:text-black m-6">MINT!</a>
               <a href="#story" className="text-4xl text-white hover:text-black m-6">Story</a>
               <a href="#roadmap" className="text-4xl text-white hover:text-black m-6">Roadmap</a>
               <a href="#next" className="text-4xl text-white hover:text-black m-6">What's next?</a>
@@ -55,7 +53,7 @@ bananas out known to man." key="twdesc" />
                     <span className="text-5xl Poppitandfinch text-redor">It's time to remind the world of travel.</span>
                     <p className="text-2xl text-white py-6  josaf flex flex-col items-left">
                       <p className="my-1"><strong>LAUNCH DATE: </strong> Soon...</p>
-                      <p className="my-1"><strong>TOTAL SUPPLY: 10000</strong> Bananas.</p>
+                      <p className="my-1"><strong>TOTAL SUPPLY: 10000</strong> CrazySuitcases.</p>
                       <p className="my-1"><strong>PRICE: 0.03 ETH </strong>each.</p>
                     </p>
                     <div className="flex flex-col items-center">
