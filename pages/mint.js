@@ -110,36 +110,29 @@ export default function Mint() {
   return (
     <div id="bodyy" className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Boring Bananas Company</title>
+        <title>Mint SuitCase</title>
         <link rel="icon" href="/images/logo.png" />
 
-        <meta property="og:title" content="Boring Bananas Co." key="ogtitle" />
-        <meta property="og:description" content="Here at Boring Bananas company, we specialise in the world's finest digital bananas. We've put together a team spanning 3 continents, to bring you some of the most ‍NUTRITIOUS and DELICIOUS
-bananas out known to man." key="ogdesc" />
+        <meta property="og:title" content="Crazy Suit Cases" key="ogtitle" />
+        <meta property="og:description" content="Ouch! What is it? It's a runaway CazySuitcase! He needs a new home." key="ogdesc" />
         <meta property="og:type" content="website" key="ogtype" />
-        <meta property="og:url" content="https://boringbananas.co/" key="ogurl"/>
-        <meta property="og:image" content="https://boringbananas.co/images/Hola.gif" key="ogimage"/>
-        <meta property="og:site_name" content="https://boringbananas.co/" key="ogsitename" />
+        <meta property="og:url" content="https://crazysuitcases.club/" key="ogurl"/>
+        <meta property="og:image" content="https://crazysuitcases.club/images/suit.jpg" key="ogimage"/>
+        <meta property="og:site_name" content="https://crazysuitcases.club/" key="ogsitename" />
 
         <meta name="twitter:card" content="summary_large_image" key="twcard"/>
         <meta property="twitter:domain" content="boringbananas.co" key="twdomain" />
-        <meta property="twitter:url" content="https://boringbananas.co/" key="twurl" />
-        <meta name="twitter:title" content="Boring Bananas Co." key="twtitle" />
-        <meta name="twitter:description" content="Here at boring Bananas company, we specialise in the world's finest digital bananas. We've put together a team spanning 3 continents, to bring you some of the most ‍NUTRITIOUS and DELICIOUS
-bananas out known to man." key="twdesc" />
-        <meta name="twitter:image" content="https://boringbananas.co/images/Hola.gif" key="twimage" />
+        <meta property="twitter:url" content="https://crazysuitcases.club/" key="twurl" />
+        <meta name="twitter:title" content="Crazy Suit Cases" key="twtitle" />
+        <meta name="twitter:description" content="Ouch! What is it? It's a runaway CazySuitcase! He needs a new home." key="twdesc" />
+        <meta name="twitter:image" content="https://crazysuitcases.club/images/suit.jpg" key="twimage" />
       </Head>
 
 
       <div >
           <div className="flex items-center justify-between w-full border-b-2	pb-6">
-            <nav className="flex flex-wrap flex-row justify-around Poppitandfinchsans">
-              <a href="/#about" className="text-4xl text-white hover:text-black m-6">About</a>
-              <a href="/mint" className="text-4xl text-white hover:text-black m-6">Mint!</a>
-              <a href="/#traits" className="text-4xl text-white hover:text-black m-6">Banana traits</a>
-              <a href="/#roadmap" className="text-4xl text-white hover:text-black m-6">Roadmap</a>
-              <a href="/#team" className="text-4xl text-white hover:text-black m-6">Team</a>
-              <a href="/#contact" className="text-4xl text-white hover:text-black m-6">Contact</a>
+            <nav className="flex flex-wrap flex-row justify-around GardeneStone">
+              <a href="/" className="text-4xl text-white hover:text-black m-6">HOME</a>
               <a href="https://twitter.com/boringbananasco" className="text-4xl  hover:text-white m-6 text-blau">TWITTER</a>
               <a href="https://discord.gg/8Wk9Hp6UyV" className="text-4xl  hover:text-white m-6 text-blau">DISCORD</a>
             </nav>
@@ -159,11 +152,11 @@ bananas out known to man." key="twdesc" />
 
             <div className="flex flex-col items-center">
 
-                <span className="flex Poppitandfinchsans text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">TOTAL BANANAS MINTED:  <span className="text-blau text-6xl"> {!signedIn ?  <>-</>  :  <>{totalSupply}</> } / 8888</span></span>
+                <span className="flex GardeneStone text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">TOTAL BANANAS MINTED:</span> <br/> <span className="flex GardeneStone items-center bg-grey-lighter rounded rounded-r-none my-4 text-blau text-6xl"> {!signedIn ?  <>-</>  :  <>{totalSupply}</> } / 8888</span>
 
-                <div id="mint" className="flex justify-around  mt-8 mx-6">
-                  <span className="flex Poppitandfinchsans text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold">GIMME</span>
-                  
+                <div id="mint" className="flex-col text-center  mt-8 mx-6 pb-10">
+                  <span className="flex mosaic text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3">I wonna</span>
+                  <br/>
                   <input 
                                       type="number" 
                                       min="1"
@@ -171,16 +164,16 @@ bananas out known to man." key="twdesc" />
                                       value={how_many_bananas}
                                       onChange={ e => set_how_many_bananas(e.target.value) }
                                       name="" 
-                                      className="Poppitandfinchsans pl-4 text-4xl  inline bg-grey-lighter  py-2 font-normal rounded text-grey-darkest  font-bold"
+                                      className="GardeneStone pl-4 text-4xl  inline bg-grey-lighter  py-2 font-normal rounded text-grey-darkest"
                                   />
-                  
-                  <span className="flex Poppitandfinchsans text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold">BANANAS!</span>
+                  <br/>
+                  <span className="flex mosaic text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3">SuitCase!</span>
     
                 </div>
                 {saleStarted ? 
-                <button onClick={() => mintBanana(how_many_bananas)} className="mt-4 Poppitandfinchsans text-4xl border-6 bg-blau  text-white hover:text-black p-2 ">MINT {how_many_bananas} bananas for {(bananaPrice * how_many_bananas) / (10 ** 18)} ETH + GAS</button>        
-                  : <button className="mt-4 Poppitandfinchsans text-4xl border-6 bg-blau  text-white hover:text-black p-2 ">SALE IS NOT ACTIVE OR NO WALLET IS CONNECTED</button>        
-            
+                <button onClick={() => mintBanana(how_many_bananas)} className="mt-4 Poppitandfinchsans text-3xl border-6 text-white hover:text-black p-2 bg-gradient-to-r from-green-400 to-blue-500    hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500">MINT {how_many_bananas} bananas for {(bananaPrice * how_many_bananas) / (10 ** 18)} ETH + GAS</button>        
+                  : <button className="mt-4 Poppitandfinchsans text-3xl border-6 bg-gray-200  text-black hover:text-black p-2">SALE IS NOT ACTIVE OR NO WALLET IS CONNECTED</button>        
+
               }
                 
             </div> 
