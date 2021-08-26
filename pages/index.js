@@ -89,7 +89,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center">
 
-            <a href="" className="mt-4 GardeneStone lg:text-4xl text-xl border-6 bg-blau  text-white hover:text-black p-2 rounded-md">MINTING PAGE</a>
+            <a href="/mint" className="mt-4 GardeneStone lg:text-4xl text-xl border-6 bg-blau  text-white hover:text-black p-2 rounded-md">MINTING PAGE</a>
                 
                 
             </div> 
