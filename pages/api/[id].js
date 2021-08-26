@@ -1,15 +1,22 @@
 import {INFURA_ADDRESS, ADDRESS, ABI} from "../../config.js"
+import Web3 from "web3";
 import traits from "../../database/traitsfinal.json";
 
 const infuraAddress = INFURA_ADDRESS
 
 const bananaApi = async(req, res) => {
-  
+
+  const provider = new Web3.providers.HttpProvider(infuraAddress)
+  const web3infura = new Web3(provider);
+  const bananaContract = new web3infura.eth.Contract(ABI, ADDRESS)
+
+  const totalSupply = await bananaContract.methods.totalSupply().call();
+  console.log(totalSupply)
+
 // THE ID YOU ASKED IN THE URL
   const query = req.query.id;
 
-  const totalBananas = 10000;
-  if(parseInt(query) < totalBananas) {
+  if(parseInt(query) < totalSupply) {
 
     let tokenName= `#${query}`
 
