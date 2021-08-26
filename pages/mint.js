@@ -12,9 +12,9 @@ export default function Mint() {
   const [walletAddress, setWalletAddress] = useState(null)
 
   // FOR MINTING
-  const [how_many_bananas, set_how_many_bananas] = useState(1)
+  const [how_many_suitcase, set_how_many_suitcase] = useState(1)
 
-  const [bananaContract, setBananaContract] = useState(null)
+  const [suitcaseContract, setsuitcaseContract] = useState(null)
 
   // INFO FROM SMART Contract
 
@@ -22,7 +22,7 @@ export default function Mint() {
 
   const [saleStarted, setSaleStarted] = useState(false)
 
-  const [bananaPrice, setBananaPrice] = useState(0)
+  const [suitcasePrice, setSuitcasePrice] = useState(0)
 
   useEffect( async() => { 
 
@@ -65,33 +65,33 @@ export default function Mint() {
   async function callContractData(wallet) {
     // let balance = await web3.eth.getBalance(wallet);
     // setWalletBalance(balance)
-    const bananaContract = new window.web3.eth.Contract(ABI, ADDRESS)
-    setBananaContract(bananaContract)
+    const suitcaseContract = new window.web3.eth.Contract(ABI, ADDRESS)
+    setsuitcaseContract(suitcaseContract)
 
-    const salebool = await bananaContract.methods.saleIsActive().call() 
+    const salebool = await suitcaseContract.methods.saleIsActive().call() 
     // console.log("saleisActive" , salebool)
     setSaleStarted(salebool)
 
-    const totalSupply = await bananaContract.methods.totalSupply().call() 
+    const totalSupply = await suitcaseContract.methods.totalSupply().call() 
     setTotalSupply(totalSupply)
 
-    const bananaPrice = await bananaContract.methods.suitcasePrice().call() 
-    setBananaPrice(bananaPrice)
+    const suitcasePrice = await suitcaseContract.methods.suitcasePrice().call() 
+    setSuitcasePrice(suitcasePrice)
    
   }
   
-  async function mintBanana(how_many_bananas) {
-    if (bananaContract) {
+  async function mintSuitcase(how_many_suitcase) {
+    if (suitcaseContract) {
  
-      const price = Number(bananaPrice)  * how_many_bananas 
+      const price = Number(suitcasePrice)  * how_many_suitcase 
 
-      const gasAmount = await bananaContract.methods.mintCrazySuitcase(how_many_bananas).estimateGas({from: walletAddress, value: price})
+      const gasAmount = await suitcaseContract.methods.mintCrazySuitcase(how_many_suitcase).estimateGas({from: walletAddress, value: price})
       console.log("estimated gas",gasAmount)
 
       console.log({from: walletAddress, value: price})
 
-      bananaContract.methods
-            .mintCrazySuitcase(how_many_bananas)
+      suitcaseContract.methods
+            .mintCrazySuitcase(how_many_suitcase)
             .send({from: walletAddress, value: price, gas: String(gasAmount)})
             .on('transactionHash', function(hash){
               console.log("transactionHash", hash)
@@ -121,7 +121,7 @@ export default function Mint() {
         <meta property="og:site_name" content="https://crazysuitcases.club/" key="ogsitename" />
 
         <meta name="twitter:card" content="summary_large_image" key="twcard"/>
-        <meta property="twitter:domain" content="boringbananas.co" key="twdomain" />
+        <meta property="twitter:domain" content="boringsuitcase.co" key="twdomain" />
         <meta property="twitter:url" content="https://crazysuitcases.club/" key="twurl" />
         <meta name="twitter:title" content="Crazy Suit Cases" key="twtitle" />
         <meta name="twitter:description" content="Ouch! What is it? It's a runaway CazySuitcase! He needs a new home." key="twdesc" />
@@ -133,7 +133,7 @@ export default function Mint() {
           <div className="flex items-center justify-around w-full border-b-2	pb-6">
             <nav className="flex flex-wrap flex-row justify-around GardeneStone">
               <a href="/" className="text-4xl text-white hover:text-black m-6">HOME</a>
-              <a href="https://twitter.com/boringbananasco" className="text-4xl  hover:text-white m-6 text-blau">TWITTER</a>
+              <a href="https://twitter.com/boringsuitcaseco" className="text-4xl  hover:text-white m-6 text-blau">TWITTER</a>
               <a href="https://discord.gg/8Wk9Hp6UyV" className="text-4xl  hover:text-white m-6 text-blau">DISCORD</a>
             </nav>
              
@@ -152,8 +152,8 @@ export default function Mint() {
 
             <div className="flex flex-col items-center">
 
-                <span className="flex GardeneStone text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">TOTAL BANANAS MINTED:</span> <br/> <span className="flex GardeneStone items-center bg-grey-lighter rounded rounded-r-none my-4 text-blau text-6xl"> {!signedIn ?  <>-</>  :  <>{totalSupply}</> } / 8888</span>
-
+                <span className="flex GardeneStone text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">TOTAL suitcases MINTED:</span> <br/> <span className="flex GardeneStone items-center bg-grey-lighter rounded rounded-r-none my-4 text-blau text-6xl"> {!signedIn ?  <>-</>  :  <>{totalSupply}</> } / 8888</span>
+                <span className="flex GardeneStone text-3xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">You can buy a maximum of 20 suitcases at a time.</span>
                 <div id="mint" className="flex-col text-center  mt-8 mx-6 pb-10">
                   <span className="flex mosaic text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3">I wonna</span>
                   <br/>
@@ -161,17 +161,17 @@ export default function Mint() {
                                       type="number" 
                                       min="1"
                                       max="20"
-                                      value={how_many_bananas}
-                                      onChange={ e => set_how_many_bananas(e.target.value) }
+                                      value={how_many_suitcase}
+                                      onChange={ e => set_how_many_suitcase(e.target.value) }
                                       name="" 
                                       className="GardeneStone pl-4 text-4xl  inline bg-grey-lighter  py-2 font-normal rounded text-grey-darkest"
                                   />
                   <br/>
-                  <span className="flex mosaic text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3">SuitCase!</span>
+                  <span className="flex mosaic text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3">SuitCases!</span> <br/> 
     
                 </div>
                 {saleStarted ? 
-                <button onClick={() => mintBanana(how_many_bananas)} className="rounded-xl border-2 border-white mt-4 Poppitandfinchsans text-3xl border-6 text-white hover:text-black p-2 bg-gradient-to-r from-green-400 to-blue-500    hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500">MINT {how_many_bananas} bananas for {(bananaPrice * how_many_bananas) / (10 ** 18)} ETH + GAS</button>        
+                <button onClick={() => mintSuitcase(how_many_suitcase)} className="rounded-xl border-2 border-white mt-4 Poppitandfinchsans text-3xl border-6 text-white hover:text-black p-2 bg-gradient-to-r from-green-400 to-blue-500    hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500">MINT {how_many_suitcase} suitcases for {(suitcasePrice * how_many_suitcase) / (10 ** 18)} ETH + GAS</button>        
                   : <button className="rounded-xl border-2 border-white mt-4 Poppitandfinchsans text-3xl border-6 bg-gray-200  text-black hover:text-black p-2">SALE IS NOT ACTIVE OR NO WALLET IS CONNECTED</button>        
 
               }
