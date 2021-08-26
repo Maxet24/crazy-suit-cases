@@ -9,7 +9,7 @@ export default function Home() {
         <link rel="icon" href="/images/logo.png" />
 
         <meta property="og:title" content="Crazy Suit Cases" key="ogtitle" />
-        <meta property="og:description" content="Ouch! What is it? It's a runaway suitcase! He needs a new home." key="ogdesc" />
+        <meta property="og:description" content="Ouch! What is it? It's a runaway CazySuitcase! He needs a new home." key="ogdesc" />
         <meta property="og:type" content="website" key="ogtype" />
         <meta property="og:url" content="https://crazysuitcases.club/" key="ogurl"/>
         <meta property="og:image" content="https://crazysuitcases.club/images/suit.jpg" key="ogimage"/>
@@ -19,7 +19,7 @@ export default function Home() {
         <meta property="twitter:domain" content="boringbananas.co" key="twdomain" />
         <meta property="twitter:url" content="https://crazysuitcases.club/" key="twurl" />
         <meta name="twitter:title" content="Crazy Suit Cases" key="twtitle" />
-        <meta name="twitter:description" content="Ouch! What is it? It's a runaway suitcase! He needs a new home." key="twdesc" />
+        <meta name="twitter:description" content="Ouch! What is it? It's a runaway CazySuitcase! He needs a new home." key="twdesc" />
         <meta name="twitter:image" content="https://crazysuitcases.club/images/suit.jpg" key="twimage" />
       </Head>
 
@@ -72,9 +72,9 @@ export default function Home() {
                           <input type="radio" name="r" id="r4"/>
                           
                           <div className="slide s1"><img src="images/suit.jpg" alt=""/></div>
-                          <div className="slide"><img src="images/suit.jpg" alt=""/></div>
-                          <div className="slide"><img src="images/suit.jpg" alt=""/></div>
-                          <div className="slide"><img src="images/suit.jpg" alt=""/></div>
+                          <div className="slide"><img src="images/20.jpg" alt=""/></div>
+                          <div className="slide"><img src="images/36.jpg" alt=""/></div>
+                          <div className="slide"><img src="images/328.jpg" alt=""/></div>
                           
                         </div>
                         <div className="navigation">
@@ -114,7 +114,7 @@ export default function Home() {
 
               {/* Roadmap */}
               <div id="roadmap" className="flex flex-col divide-y-2 roadmap">
-                <h2 className="text-blau GardeneStone text-6xl text-center py-6">Roadmap</h2>
+                <h2 className="text-blau GardeneStone text-6xl text-center py-6">Roadmap (<span className="text-6xl GardeneStone text-white my-3">% SOLD</span>)</h2>
                 <div className="flex flex-row py-6">
                   <div className="w-1/4 text-center flex justify-center items-center"><h1 className="text-7xl GardeneStone text-white my-3">25 %</h1></div>
                   <div className="w-3/4 ml-5">
@@ -148,8 +148,17 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              {/* Roadmap end */}
-              
+
+              {/* Why us? */}
+              <div id="story" className="flex flex-wrap justify-center items-center py-6 mb-20">
+                <div className="flex flex-col justify-between w-full pt-6">
+                  <h2 className="bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl border-4 border-white text-blau GardeneStone text-6xl text-center py-6">Why us!?</h2>
+                  <p className="text-4xl text-white py-6  incon"> Our team analyzed most <span className="text-green-400">successful</span> and <span className="text-red-400">unsuccessful</span> NFT collections. Based on this research, we put together a social media promotion plan.</p>
+                  <p className="text-4xl text-white py-6  incon">In this way we want to achieve a high value of the suitcases after they sell out.</p>
+                </div>
+              </div>
+
+              {/* Continue */}
               <div id="next" className="flex flex-wrap justify-center items-center py-6">
                 <div className="flex flex-col justify-between w-full pt-6 border-4 rounded-2xl">
                   <h2 className="text-blau GardeneStone text-6xl text-center">- Is this the end?</h2>
@@ -157,7 +166,6 @@ export default function Home() {
                   <p className="text-4xl text-white py-6 text-center josaf">CrazySuitcases is the beginning of a <span className="text-bold text-5xl text-redor GardeneStone">big, massive</span> project.</p>
                 </div>
               </div>
-
               {/* Team */}
               <div id="team" className="mx-12 my-16 border-t-2">
                 <h2 className="text-7xl text-center GardeneStone text-blau my-4">OUR TEAM</h2>
@@ -181,7 +189,7 @@ export default function Home() {
                   <div className="flex flex-col justify-between mx-6 sm:w-1/2 w-full py-6 ">
                     <p className="text-2xl text-white py-6  josaf font-bold">
                       <a className="links" target="_blank" href="mailto:crazysuitcases@gmail.com">crazysuitcases@gmail.com</a><br/>
-                      <a className="links" target="_blank" href="">@</a><br/> 
+                      <a className="links" target="_blank" href="https://twitter.com/crazy_suitcases">@crazy_suitcases</a><br/> 
                       <a className="links" target="_blank" href="https://discord.gg/jyT99PjNe7">Discord Server</a>
                     </p>
                   </div>

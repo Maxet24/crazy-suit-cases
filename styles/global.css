@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 
 @font-face {
 font-family: 'Poppitandfinch';
@@ -103,6 +104,10 @@ body {
 
 .josaf {
     font-family: 'Josefin Sans', sans-serif;
+}
+
+.incon {
+    font-family: 'Inconsolata', monospace;
 }
 
 #givecrypto {

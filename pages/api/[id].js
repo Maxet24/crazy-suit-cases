@@ -1,6 +1,8 @@
 import {INFURA_ADDRESS, ADDRESS, ABI} from "../../config.js"
 import traits from "../../database/traitsfinal.json";
 
+const infuraAddress = INFURA_ADDRESS
+
 const bananaApi = async(req, res) => {
   
 // THE ID YOU ASKED IN THE URL
@@ -63,7 +65,7 @@ const bananaApi = async(req, res) => {
     res.json(metadata)
   } else {
     res.statuscode = 404
-    res.json({error: "The banana you requested is out of range"})
+    res.json({error: "The suitcase you requested is out of range"})
 
   }
 
