@@ -72,6 +72,10 @@ body {
     color: #fbc036;
 }
 
+.border-blau {
+    border-color: #fbc036;
+}
+
 .text-redor {
     color: #B54634;
 }
@@ -132,3 +136,27 @@ body {
         font-size: 1.5rem;
     }
 }
+
+@media (min-width: 350px) {
+    .iphonex{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .windows {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    }
+}
+
+/* .striped-shadow {
+    text-transform: uppercase;
+    text-shadow: -5px -5px 0px #EF7657;
+    background: radial-gradient(#9DA8A9 1px, transparent 1px);
+    background-size: 4px 4px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: table;
+} */

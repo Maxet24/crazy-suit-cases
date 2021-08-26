@@ -42,8 +42,8 @@ export default function Mint() {
     window.ethereum.enable()
       .then(function (accounts) {
         window.web3.eth.net.getNetworkType()
-        // checks if connected network is mainnet (change this to rinkeby if you wanna test on testnet)
-        .then((network) => {console.log(network);if(network != "main"){alert("You are on " + network+ " network. Change network to mainnet or you won't be able to do anything here")} });  
+        // checks if connected network is mainnet (change this to rinkeby if you wanna test on testnet) (main)
+        .then((network) => {console.log(network);if(network != "rinkeby"){alert("You are on " + network+ " network. Change network to mainnet or you won't be able to do anything here")} });  
         let wallet = accounts[0]
         setWalletAddress(wallet)
         setSignedIn(true)
@@ -75,7 +75,7 @@ export default function Mint() {
     const totalSupply = await bananaContract.methods.totalSupply().call() 
     setTotalSupply(totalSupply)
 
-    const bananaPrice = await bananaContract.methods.bananaPrice().call() 
+    const bananaPrice = await bananaContract.methods.suitcasePrice().call() 
     setBananaPrice(bananaPrice)
    
   }
@@ -85,13 +85,13 @@ export default function Mint() {
  
       const price = Number(bananaPrice)  * how_many_bananas 
 
-      const gasAmount = await bananaContract.methods.mintBoringBanana(how_many_bananas).estimateGas({from: walletAddress, value: price})
+      const gasAmount = await bananaContract.methods.mintCrazySuitcase(how_many_bananas).estimateGas({from: walletAddress, value: price})
       console.log("estimated gas",gasAmount)
 
       console.log({from: walletAddress, value: price})
 
       bananaContract.methods
-            .mintBoringBanana(how_many_bananas)
+            .mintCrazySuitcase(how_many_bananas)
             .send({from: walletAddress, value: price, gas: String(gasAmount)})
             .on('transactionHash', function(hash){
               console.log("transactionHash", hash)
@@ -130,7 +130,7 @@ export default function Mint() {
 
 
       <div >
-          <div className="flex items-center justify-between w-full border-b-2	pb-6">
+          <div className="flex items-center justify-around w-full border-b-2	pb-6">
             <nav className="flex flex-wrap flex-row justify-around GardeneStone">
               <a href="/" className="text-4xl text-white hover:text-black m-6">HOME</a>
               <a href="https://twitter.com/boringbananasco" className="text-4xl  hover:text-white m-6 text-blau">TWITTER</a>
@@ -139,9 +139,9 @@ export default function Mint() {
              
           </div>
           <div className="flex auth my-8 font-bold  justify-center items-center vw2">
-            {!signedIn ? <button onClick={signIn} className="montserrat inline-block border-2 border-black bg-white border-opacity-100 no-underline hover:text-black py-2 px-4 mx-4 shadow-lg hover:bg-blue-500 hover:text-gray-100">Connect Wallet with Metamask</button>
+            {!signedIn ? <button onClick={signIn} className=" GardeneStone inline-block border-2 border-blau bg-white border-opacity-100 no-underline hover:text-black py-2 px-4 mx-4 shadow-lg hover:bg-blue-500 hover:text-gray-100">Connect Wallet with Metamask</button>
             :
-            <button onClick={signOut} className="montserrat inline-block border-2 border-black bg-white border-opacity-100 no-underline hover:text-black py-2 px-4 mx-4 shadow-lg hover:bg-blue-500 hover:text-gray-100">Wallet Connected: {walletAddress}</button>}
+            <button onClick={signOut} className="windows iphonex text-xs GardeneStone inline-block border-2 border-blau bg-white border-opacity-100 no-underline hover:text-black py-2 px-4 mx-4 shadow-lg hover:bg-blue-500 hover:text-gray-100">Wallet Connected: {walletAddress}</button>}
           </div>
         </div>
 
@@ -171,8 +171,8 @@ export default function Mint() {
     
                 </div>
                 {saleStarted ? 
-                <button onClick={() => mintBanana(how_many_bananas)} className="mt-4 Poppitandfinchsans text-3xl border-6 text-white hover:text-black p-2 bg-gradient-to-r from-green-400 to-blue-500    hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500">MINT {how_many_bananas} bananas for {(bananaPrice * how_many_bananas) / (10 ** 18)} ETH + GAS</button>        
-                  : <button className="mt-4 Poppitandfinchsans text-3xl border-6 bg-gray-200  text-black hover:text-black p-2">SALE IS NOT ACTIVE OR NO WALLET IS CONNECTED</button>        
+                <button onClick={() => mintBanana(how_many_bananas)} className="rounded-xl border-2 border-white mt-4 Poppitandfinchsans text-3xl border-6 text-white hover:text-black p-2 bg-gradient-to-r from-green-400 to-blue-500    hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500">MINT {how_many_bananas} bananas for {(bananaPrice * how_many_bananas) / (10 ** 18)} ETH + GAS</button>        
+                  : <button className="rounded-xl border-2 border-white mt-4 Poppitandfinchsans text-3xl border-6 bg-gray-200  text-black hover:text-black p-2">SALE IS NOT ACTIVE OR NO WALLET IS CONNECTED</button>        
 
               }
                 
