@@ -33,8 +33,8 @@ export default function Home() {
               <a href="#roadmap" className="text-4xl text-white hover:text-black m-6">Roadmap</a>
               <a href="#next" className="text-4xl text-white hover:text-black m-6">What's next?</a>
               <a href="#team" className="text-4xl text-white hover:text-black m-6">Team/Contact</a>
-              <a href="" className="text-4xl  hover:text-white m-6 text-blau">TWITTER</a>
-              <a href="https://discord.gg/jyT99PjNe7" className="text-4xl  hover:text-white m-6 text-blau">DISCORD</a>
+              <a href="https://twitter.com/crazy_suitcases" className="text-4xl  hover:text-white m-6 text-blau">TWITTER</a>
+              <a href="https://discord.gg/x9Futw6MsH" className="text-4xl  hover:text-white m-6 text-blau">DISCORD</a>
             </nav>
              
           </div>
@@ -190,7 +190,7 @@ export default function Home() {
                     <p className="text-2xl text-white py-6  josaf font-bold">
                       <a className="links" target="_blank" href="mailto:crazysuitcases@gmail.com">crazysuitcases@gmail.com</a><br/>
                       <a className="links" target="_blank" href="https://twitter.com/crazy_suitcases">@crazy_suitcases</a><br/> 
-                      <a className="links" target="_blank" href="https://discord.gg/jyT99PjNe7">Discord Server</a>
+                      <a className="links" target="_blank" href="https://discord.gg/x9Futw6MsH">Discord Server</a>
                     </p>
                   </div>
               </div>   
