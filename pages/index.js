@@ -147,6 +147,35 @@ export default function Home() {
                     </h1>
                   </div>
                 </div>
+                <div className="flex flex-row py-6">
+                  <div className="w-1/4 text-center flex justify-center items-center"><h1 className="lg:text-7xl text-4xl GardeneStone text-white my-3">October</h1></div>
+                  <div className="w-3/4 ml-5 ">
+                    <h1 className="lg:text-6xl text-5xl GardeneStone text-white text-blau">
+                      Technical preparation of the<span className="josaf text-redor"> stamp collection</span>. 
+                    </h1>
+                  </div>
+                </div>
+                <div className="flex flex-row py-6">
+                  <div className="w-1/4 text-center flex justify-center items-center"><h1 className="lg:text-7xl text-4xl GardeneStone text-white my-3">November</h1></div>
+                  <div className="w-3/4 ml-5 ">
+                    <h1 className="lg:text-6xl text-5xl GardeneStone text-white text-blau">
+                       Launching a stamp collection! For the first time <span className="josaf text-redor">EVER</span>, we will make stamps that can be attached to suitcases. This way you can buy stamps and <span className="josaf text-redor">increase the value</span> of your suitcase. Details below. 
+                    </h1>
+                  </div>
+                </div>
+              </div>
+
+              {/* Continue */}
+              <div id="next" className="flex flex-wrap justify-center items-center py-6">
+                <div className="flex flex-col justify-between w-full pt-6 border-4 rounded-2xl stamps">
+                  <h2 className="text-redor GardeneStone text-6xl text-center">Collection of stamps.</h2>
+                  <p className="text-4xl text-white py-6 text-center josaf">A collection of stamps will be released in <span className="text-blau">November</span> for you to attach to your suitcases. This will be done using the interface on the site. Thus, if you have a rare suitcase and there are rare stickers on it, then this suitcase will become even more <span className="text-blau">valuable</span>.</p>
+                  <p className="text-4xl text-white py-6 text-center josaf">All this will be stored in the database. You will also see stamps on the picture of your suitcase. The number of brands is limited.</p>
+                  <h2 className="text-blau GardeneStone text-6xl text-center mt-5">Conditions:</h2>
+                  <p className="text-4xl text-white py-6 text-center josaf"><span className="text-blau text-5xl GardeneStone">1.</span> One stamp costs 0.01 ETH. (Price may change due to the growth of ETH)</p>
+                  <p className="text-4xl text-white py-6 text-center josaf"><span className="text-blau text-5xl GardeneStone">2.</span> Each suitcase holder can exchange the suitcase for 3 stamps.</p>
+                  <p className="text-4xl text-white py-6 text-center josaf"><span className="text-blau text-5xl GardeneStone">3.</span> Three stamps cannot be converted into a suitcase.</p>
+                </div>
               </div>
 
               {/* Why us? */}
@@ -158,14 +187,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Continue */}
-              <div id="next" className="flex flex-wrap justify-center items-center py-6">
-                <div className="flex flex-col justify-between w-full pt-6 border-4 rounded-2xl">
-                  <h2 className="text-blau GardeneStone text-6xl text-center">- Is this the end?</h2>
-                  <h2 className="text-white GardeneStone text-6xl text-center mt-5">- NO!</h2>
-                  <p className="text-4xl text-white py-6 text-center josaf">CrazySuitcases is the beginning of a <span className="text-bold text-5xl text-redor GardeneStone">big, massive</span> project.</p>
-                </div>
-              </div>
               {/* Team */}
               <div id="team" className="mx-12 my-16 border-t-2">
                 <h2 className="text-7xl text-center GardeneStone text-blau my-4">OUR TEAM</h2>
