@@ -31,7 +31,7 @@ export default function Home() {
               <a href="/mint" className="text-4xl text-green-400 hover:text-black m-6">MINT!</a>
               <a href="#story" className="text-4xl text-white hover:text-black m-6">Story</a>
               <a href="#roadmap" className="text-4xl text-white hover:text-black m-6">Roadmap</a>
-              <a href="#next" className="text-4xl text-white hover:text-black m-6">What's next?</a>
+              <a href="#next" className="text-4xl text-white hover:text-black m-6">Stamps</a>
               <a href="#team" className="text-4xl text-white hover:text-black m-6">Team/Contact</a>
               <a href="https://twitter.com/crazy_suitcases" className="text-4xl  hover:text-white m-6 text-blau">TWITTER</a>
               <a href="https://discord.gg/x9Futw6MsH" className="text-4xl  hover:text-white m-6 text-blau">DISCORD</a>
@@ -49,7 +49,8 @@ export default function Home() {
             <div className="flex flex-wrap lg:flex-nowrap justify-around items-center">
                   <div className="lg:w-1/2 w-3/4 priority-1">
                     <h1 className="text-7xl GardeneStone text-white ">When was the last time you used <span className="text-blau">suitcases</span>?</h1>
-                    <p className="text-2xl text-white py-6  josaf">I think a long time ago, so meet these <span className="text-3xl GardeneStone text-blau">CrazySuitcases!</span> <br/> Each one is <span className="text-blau text-3xl GardeneStone">unique</span>.</p> 
+                    <p className="text-2xl text-white py-6  josaf">I think a long time ago, so meet these <span className="text-3xl GardeneStone text-blau">CrazySuitcases!</span> <br/> Each one is <span className="text-blau text-3xl GardeneStone">unique</span>.<br/> 
+                    For the <span className="text-3xl GardeneStone text-blau">first time in the history of NFT</span>, you can attach Stamps to them.</p>
                     <span className="text-5xl Poppitandfinch text-redor">It's time to remind the world of travel.</span>
                     <p className="text-2xl text-white py-6  josaf flex flex-col items-left">
                       <p className="my-1"><strong>LAUNCH DATE: </strong> Soon...</p>
