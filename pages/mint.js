@@ -43,7 +43,7 @@ export default function Mint() {
       .then(function (accounts) {
         window.web3.eth.net.getNetworkType()
         // checks if connected network is mainnet (change this to rinkeby if you wanna test on testnet) (main)
-        .then((network) => {console.log(network);if(network != "main"){alert("You are on " + network+ " network. Change network to mainnet or you won't be able to do anything here")} });  
+        .then((network) => {console.log(network);if(network != "rinkeby"){alert("You are on " + network+ " network. Change network to mainnet or you won't be able to do anything here")} });  
         let wallet = accounts[0]
         setWalletAddress(wallet)
         setSignedIn(true)
@@ -68,14 +68,14 @@ export default function Mint() {
     const suitcaseContract = new window.web3.eth.Contract(ABI, ADDRESS)
     setsuitcaseContract(suitcaseContract)
 
-    const salebool = await suitcaseContract.methods.saleIsActive().call() 
+    const salebool = await suitcaseContract.methods.saleActive().call() 
     // console.log("saleisActive" , salebool)
     setSaleStarted(salebool)
 
     const totalSupply = await suitcaseContract.methods.totalSupply().call() 
     setTotalSupply(totalSupply)
 
-    const suitcasePrice = await suitcaseContract.methods.suitcasePrice().call() 
+    const suitcasePrice = 30000000000000000
     setSuitcasePrice(suitcasePrice)
    
   }
@@ -85,13 +85,13 @@ export default function Mint() {
  
       const price = Number(suitcasePrice)  * how_many_suitcase 
 
-      const gasAmount = await suitcaseContract.methods.mintCrazySuitcase(how_many_suitcase).estimateGas({from: walletAddress, value: price})
+      const gasAmount = await suitcaseContract.methods.mintItems(how_many_suitcase).estimateGas({from: walletAddress, value: price})
       console.log("estimated gas",gasAmount)
 
       console.log({from: walletAddress, value: price})
 
       suitcaseContract.methods
-            .mintCrazySuitcase(how_many_suitcase)
+            .mintItems(how_many_suitcase)
             .send({from: walletAddress, value: price, gas: String(gasAmount)})
             .on('transactionHash', function(hash){
               console.log("transactionHash", hash)
