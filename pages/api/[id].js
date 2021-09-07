@@ -30,7 +30,7 @@ const bananaApi = async(req, res) => {
       "name": tokenName,
       "description": "During COVID-19, people almost stopped traveling. Because of this, their suitcases stopped fulfilling their function. They have been lying around and gathering dust in people's homes for a long time. This affected the suitcases so much that they began to go crazy. The CrazySuitcases ran away from their homes. Our team rescued the crazy suitcases. But they need new homes. Only you can help them and shelter them!",
       "tokenId" : parseInt(query),
-      "image": `https://crazysuitcases.club/images/norev.jpg`,
+      "image": `https://crazysuitcases.club/images/rev.jpg`,
       "external_url":"https://crazysuitcases.club/"
     }
     
