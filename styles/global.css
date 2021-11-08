@@ -26,7 +26,8 @@ font-display: swap;
 /* My fonts */
 @font-face {
     font-family: 'GardeneStone';
-    src: url('../fonts/Gardene\ Stone.ttf') format('truetype');
+    src: url('../fonts/GardeneStone.ttf') format('truetype'),
+        url('../fonts/GardeneStone.woff') format('woff'); /* Modern Browsers */
     font-weight: 300;
     font-style: regular;
     font-display: swap;
