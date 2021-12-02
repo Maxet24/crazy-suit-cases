@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 import {ADDRESS, ABI} from "../config.js"
 
-export default function PreMint() {
+export default function Mint() {
 
   // FOR WALLET
   const [signedIn, setSignedIn] = useState(false)
@@ -21,8 +21,6 @@ export default function PreMint() {
   const [totalSupply, setTotalSupply] = useState(0)
 
   const [saleStarted, setSaleStarted] = useState(false)
-
-  const [isWhitelisted, setWhitelisted] = useState(false)
 
   const [suitcasePrice, setSuitcasePrice] = useState(0)
 
@@ -70,10 +68,7 @@ export default function PreMint() {
     const suitcaseContract = new window.web3.eth.Contract(ABI, ADDRESS)
     setsuitcaseContract(suitcaseContract)
 
-    const isWhitelistedWallet = await suitcaseContract.methods.isWhitelisted(wallet).call()
-    setWhitelisted(isWhitelistedWallet)
-
-    const salebool = await suitcaseContract.methods.presaleActive().call() 
+    const salebool = await suitcaseContract.methods.saleActive().call() 
     // console.log("saleisActive" , salebool)
     setSaleStarted(salebool)
 
@@ -90,13 +85,13 @@ export default function PreMint() {
  
       const price = Number(suitcasePrice)  * how_many_suitcase 
 
-      const gasAmount = await suitcaseContract.methods.presaleMintItems(how_many_suitcase).estimateGas({from: walletAddress, value: price})
+      const gasAmount = await suitcaseContract.methods.mintItems(how_many_suitcase).estimateGas({from: walletAddress, value: price})
       console.log("estimated gas",gasAmount)
 
       console.log({from: walletAddress, value: price})
 
       suitcaseContract.methods
-            .presaleMintItems(how_many_suitcase)
+            .mintItems(how_many_suitcase)
             .send({from: walletAddress, value: price, gas: String(gasAmount)})
             .on('transactionHash', function(hash){
               console.log("transactionHash", hash)
@@ -158,7 +153,7 @@ export default function PreMint() {
             <div className="flex flex-col items-center">
 
                 <span className="flex GardeneStone text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">TOTAL suitcases MINTED:</span> <br/> <span className="flex GardeneStone items-center bg-grey-lighter rounded rounded-r-none my-4 text-blau text-6xl"> {!signedIn ?  <>-</>  :  <>{totalSupply}</> } / 10000</span>
-                <span className="flex GardeneStone text-3xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">You can buy a maximum of 2 suitcases at a time on presale.</span>
+                <span className="flex GardeneStone text-3xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">You can buy a maximum of 20 suitcases at a time on presale.</span>
                 <div id="mint" className="flex-col text-center  mt-8 mx-6 pb-10">
                   <span className="flex mosaic text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3">I wonna</span>
                   <br/>
@@ -175,10 +170,9 @@ export default function PreMint() {
                   <span className="flex mosaic text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3">SuitCases!</span> <br/> 
     
                 </div>
-                {saleStarted && isWhitelisted ? 
-                <button onClick={() => mintSuitcase(how_many_suitcase)} className="rounded-xl border-2 border-white mt-4 Poppitandfinchsans text-3xl border-6 text-white hover:text-black p-2 bg-gradient-to-r from-green-400 to-blue-500    hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500">MINT {how_many_suitcase} suitcases for {(suitcasePrice * how_many_suitcase) / (10 ** 18)} ETH + GAS</button>   
-                  : !isWhitelisted ? <button className="rounded-xl border-2 border-white mt-4 Poppitandfinchsans text-3xl border-6 bg-gray-200  text-black hover:text-black p-2">YOU AREN'T IN WHITELIST</button>
-                    : <button className="rounded-xl border-2 border-white mt-4 Poppitandfinchsans text-3xl border-6 bg-gray-200  text-black hover:text-black p-2">PRESALE IS NOT ACTIVE OR NO WALLET IS CONNECTED</button>        
+                {saleStarted ? 
+                <button onClick={() => mintSuitcase(how_many_suitcase)} className="rounded-xl border-2 border-white mt-4 Poppitandfinchsans text-3xl border-6 text-white hover:text-black p-2 bg-gradient-to-r from-green-400 to-blue-500    hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500">MINT {how_many_suitcase} suitcases for {(suitcasePrice * how_many_suitcase) / (10 ** 18)} ETH + GAS</button>        
+                  : <button className="rounded-xl border-2 border-white mt-4 Poppitandfinchsans text-3xl border-6 bg-gray-200  text-black hover:text-black p-2">PRESALE IS NOT ACTIVE OR NO WALLET IS CONNECTED</button>        
 
               }
                 

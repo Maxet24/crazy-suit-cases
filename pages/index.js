@@ -28,7 +28,7 @@ export default function Home() {
           <div className="flex items-center justify-between w-full border-b-2	pb-6">
             <nav className="flex flex-wrap flex-row py-6 justify-around GardeneStone">
               <a href="#about" className="text-4xl text-white hover:text-black m-6">About</a>
-              <a href="/mint" className="text-4xl text-green-400 hover:text-black m-6">MINT!</a>
+              {/* <a href="/mint" className="text-4xl text-green-400 hover:text-black m-6">MINT!</a> */}
               <a href="/presale" className="text-4xl text-blue-600 hover:text-black m-6">PreSale</a>
               <a href="#story" className="text-4xl text-white hover:text-black m-6">Story</a>
               <a href="#roadmap" className="text-4xl text-white hover:text-black m-6">Roadmap</a>
