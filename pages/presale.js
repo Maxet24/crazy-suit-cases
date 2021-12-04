@@ -114,7 +114,7 @@ export default function Mint() {
         <link rel="icon" href="/images/logo.png" />
 
         <meta property="og:title" content="Presale of CrazySuitCases" key="ogtitle" />
-        <meta property="og:description" content="Ouch! What is it? It's a runaway CazySuitcase! He needs a new home." key="ogdesc" />
+        <meta property="og:description" content="Ouch! What is it? It's a runaway CazySuitcase!" key="ogdesc" />
         <meta property="og:type" content="website" key="ogtype" />
         <meta property="og:url" content="https://crazysuitcases.club/" key="ogurl"/>
         <meta property="og:image" content="https://crazysuitcases.club/images/suit.jpg" key="ogimage"/>
@@ -153,7 +153,7 @@ export default function Mint() {
             <div className="flex flex-col items-center">
 
                 <span className="flex GardeneStone text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">TOTAL suitcases MINTED:</span> <br/> <span className="flex GardeneStone items-center bg-grey-lighter rounded rounded-r-none my-4 text-blau text-6xl"> {!signedIn ?  <>?</>  :  <>{81 + parseInt(totalSupply)}</> } / 10000</span>
-                <span className="flex GardeneStone text-3xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">You can buy a maximum of 20 suitcases at a time on presale.</span>
+                <span className="flex GardeneStone text-3xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4">You can buy a maximum of 20 suitcases at a time on presale.</span>
                 <div id="mint" className="flex-col text-center  mt-8 mx-6 pb-10">
                   <span className="flex mosaic text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3">I wonna</span>
                   <br/>
