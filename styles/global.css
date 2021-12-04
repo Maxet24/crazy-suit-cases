@@ -3,30 +3,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 
 @font-face {
-font-family: 'Poppitandfinch';
-src: url('../public/fonts/PoppitAndFinch.otf') format('opentype');
-font-weight: 400;
-font-style: normal;
-font-display: swap;
+    font-family: "Poppitandfinch";
+    src: url("/fonts/PoppitAndFinch.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face {
-font-family: 'Poppitandfinchsans';
-src: url('../public/fonts/PoppitAndFinchSans.otf') format('opentype');
-font-weight: 400;
-font-style: normal;
-font-display: swap;
+    font-family: "Poppitandfinchsans";
+    src: url("/fonts/PoppitAndFinchSans.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face {
-font-family: 'Montserrat-Light';
-src: url('../public/fonts/Montserrat-Light.ttf') format('truetype');
-font-weight: 300;
-font-style: regular;
-font-display: swap;
+    font-family: "Montserrat-Light";
+    src: url("/fonts/Montserrat-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: regular;
+    font-display: swap;
 }
 /* My fonts */
 @font-face {
-    font-family: 'GardeneStone';
-    src: url('/fonts/Gardene-Stone.ttf') format('truetype');
+    font-family: "GardeneStone";
+    src: url("/fonts/Gardene-Stone.ttf") format("truetype");
     font-weight: 300;
     font-style: regular;
     font-display: swap;
