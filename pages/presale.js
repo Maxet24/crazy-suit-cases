@@ -152,7 +152,7 @@ export default function Mint() {
 
             <div className="flex flex-col items-center">
 
-                <span className="flex GardeneStone text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">TOTAL suitcases MINTED:</span> <br/> <span className="flex GardeneStone items-center bg-grey-lighter rounded rounded-r-none my-4 text-blau text-6xl"> {!signedIn ?  <>?</>  :  <>{81 + parseInt(totalSupply)}</> } / 10000</span>
+                <span className="flex GardeneStone text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">TOTAL suitcases MINTED:</span> <br/> <span className="flex GardeneStone items-center bg-grey-lighter rounded rounded-r-none my-4 text-blau text-6xl"> {!signedIn ?  <>?</>  :  <>{170 + parseInt(totalSupply)}</> } / 10000</span>
                 <span className="flex GardeneStone text-3xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4">You can buy a maximum of 20 suitcases at a time on presale.</span>
                 <div id="mint" className="flex-col text-center  mt-8 mx-6 pb-10">
                   <span className="flex mosaic text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3">I wonna</span>
