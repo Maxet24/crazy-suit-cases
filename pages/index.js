@@ -54,7 +54,7 @@ export default function Home() {
                     For the <span className="text-3xl GardeneStone text-blau">first time in the history of NFT</span>, you can attach Stamps to them.</p>
                     <span className="text-5xl Poppitandfinch text-redor">It's time to remind the world of travel.</span>
                     <div className="text-2xl text-white py-6  josaf flex flex-col items-left">
-                      <p className="my-1"><strong>LAUNCH DATE: </strong> Soon...</p>
+                      <p className="my-1"><strong>LAUNCH DATE: </strong> December 9, 16:00 UTC</p>
                       <p className="my-1"><strong>TOTAL SUPPLY: 10000</strong> CrazySuitcases.</p>
                       <p className="my-1"><strong>PRICE: 0.03 ETH </strong>each.</p>
                     </div>
