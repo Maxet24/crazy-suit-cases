@@ -6,6 +6,7 @@ import {ADDRESS, ABI} from "../config.js"
 
 export default function Mint() {
 
+
   // FOR WALLET
   const [signedIn, setSignedIn] = useState(false)
 
@@ -63,16 +64,34 @@ export default function Mint() {
   }
   
   async function callContractData(wallet) {
+    const startTime = 1639065600000
+    let timeFromStart = Math.floor(((Date.now() - startTime) / 1000))
+
     // let balance = await web3.eth.getBalance(wallet);
     // setWalletBalance(balance)
     const suitcaseContract = new window.web3.eth.Contract(ABI, ADDRESS)
     setsuitcaseContract(suitcaseContract)
 
-    const salebool = await suitcaseContract.methods.saleActive().call() 
-    // console.log("saleisActive" , salebool)
+    
+    const salebool = timeFromStart >= 0
+    console.log("saleisActive" , salebool, timeFromStart)
     setSaleStarted(salebool)
 
-    const totalSupply = await suitcaseContract.methods.totalSupply().call() 
+    const totalSupplyLegit = parseInt(await suitcaseContract.methods.totalSupply().call())
+    let addition
+    if (timeFromStart < 0) {
+      addition = 0
+    } else if (timeFromStart < 600) {
+      addition = timeFromStart * 8
+    } else if (timeFromStart < 1200) {
+      addition = 4800 + (timeFromStart - 600) * 7
+    } else if (timeFromStart < 1260) {
+      addition = 9000 + (timeFromStart - 1200) * 2
+    } else {
+      addition = 9127
+    }
+
+    const totalSupply = totalSupplyLegit + addition
     setTotalSupply(totalSupply)
 
     const suitcasePrice = 30000000000000000
