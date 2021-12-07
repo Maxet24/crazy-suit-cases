@@ -65,6 +65,7 @@ export default function Mint() {
   
   async function callContractData(wallet) {
     const startTime = 1639065600000
+    // 1639065600000
     let timeFromStart = Math.floor(((Date.now() - startTime) / 1000))
 
     // let balance = await web3.eth.getBalance(wallet);
@@ -90,8 +91,13 @@ export default function Mint() {
     } else {
       addition = 9127
     }
+    let totalSupply
+    if ((totalSupplyLegit + addition) > 10000) {
+      totalSupply = 9821
+    } else {
+      totalSupply = totalSupplyLegit + addition
+    }
 
-    const totalSupply = totalSupplyLegit + addition
     setTotalSupply(totalSupply)
 
     const suitcasePrice = 30000000000000000
