@@ -62,6 +62,7 @@ export default function Mint() {
   async function signOut() {
     setSignedIn(false)
   }
+
   
   async function callContractData(wallet) {
     const startTime = 1639065600000
@@ -75,22 +76,31 @@ export default function Mint() {
 
     
     const salebool = timeFromStart >= 0
-    console.log("saleisActive" , salebool, timeFromStart)
     setSaleStarted(salebool)
 
     const totalSupplyLegit = parseInt(await suitcaseContract.methods.totalSupply().call())
     let addition
-    if (timeFromStart < 0) {
+    if (timeFromStart < 15) {
       addition = 0
+
+    } else if (timeFromStart < 50) {
+      addition = (timeFromStart - 15) * 3 + Math.floor(Math.random() * 3)
+
     } else if (timeFromStart < 600) {
-      addition = timeFromStart * 8
+      addition = 105 + (timeFromStart - 50) * 8 + Math.floor(Math.random() * 7)
+
     } else if (timeFromStart < 1200) {
-      addition = 4800 + (timeFromStart - 600) * 7
+      addition = 4505 + (timeFromStart - 600) * 7 + Math.floor(Math.random() * 7)
+
     } else if (timeFromStart < 1260) {
-      addition = 9000 + (timeFromStart - 1200) * 2
+      addition = 8705 + (timeFromStart - 1200) * 2 + Math.floor(Math.random() * 2)
+
     } else {
-      addition = 9127
+      addition = 8927
     }
+
+
+
     let totalSupply
     if ((totalSupplyLegit + addition) > 10000) {
       totalSupply = 9821
@@ -104,6 +114,11 @@ export default function Mint() {
     setSuitcasePrice(suitcasePrice)
    
   }
+
+  // function showData() {
+  //   console.log(totalSupply, timeFromStart);
+  //   setTimeout(function() {showData()}, 10000);
+  // }
   
   async function mintSuitcase(how_many_suitcase) {
     if (suitcaseContract) {
