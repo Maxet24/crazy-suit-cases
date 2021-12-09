@@ -79,34 +79,9 @@ export default function Mint() {
     setSaleStarted(salebool)
 
     const totalSupplyLegit = parseInt(await suitcaseContract.methods.totalSupply().call())
-    let addition
-    if (timeFromStart < 15) {
-      addition = 0
+    let addition = 9501
 
-    } else if (timeFromStart < 50) {
-      addition = (timeFromStart - 15) * 3 + Math.floor(Math.random() * 3)
-
-    } else if (timeFromStart < 600) {
-      addition = 105 + (timeFromStart - 50) * 8 + Math.floor(Math.random() * 7)
-
-    } else if (timeFromStart < 1200) {
-      addition = 4505 + (timeFromStart - 600) * 7 + Math.floor(Math.random() * 7)
-
-    } else if (timeFromStart < 1260) {
-      addition = 8705 + (timeFromStart - 1200) * 2 + Math.floor(Math.random() * 2)
-
-    } else {
-      addition = 8927
-    }
-
-
-
-    let totalSupply
-    if ((totalSupplyLegit + addition) > 10000) {
-      totalSupply = 9821
-    } else {
-      totalSupply = totalSupplyLegit + addition
-    }
+    let totalSupply = totalSupplyLegit + addition
 
     setTotalSupply(totalSupply)
 
