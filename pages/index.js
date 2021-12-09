@@ -8,6 +8,7 @@ export default function Home() {
         <title>CrazySuitcases</title>
         <link rel="icon" href="/images/logo.png" />
 
+
         <meta property="og:title" content="Crazy Suit Cases" key="ogtitle" />
         <meta property="og:description" content="Ouch! What is it? It's a runaway CazySuitcase! He needs a new home." key="ogdesc" />
         <meta property="og:type" content="website" key="ogtype" />
@@ -59,7 +60,9 @@ export default function Home() {
                       <p className="my-1"><strong>PRICE: 0.03 ETH </strong>each.</p>
                     </div>
                     <div className="flex flex-col items-center">
-                    {/* <iframe src="https://free.timeanddate.com/countdown/i7xe0hwa/n166/cf12/cm0/cu4/ct2/cs1/cacf7c34a/co0/cr0/ss0/cacfbc036/cpc900/pct/tcfff/fn3/fs250/iso2021-08-13T00:00:00" allowtransparency="true" frameborder="0" width="220" height="63"></iframe> */}
+                      {/* Здесь! */}
+                      <iframe src="https://free.timeanddate.com/countdown/i7xe0hwa/cf12/cm0/cu4/ct2/cs1/cacfbc036/co0/cr0/ss0/cacfbc036/cpc900/pct/tcfff/fn3/fs250/szw320/szh135/iso2021-12-09T16:00:00" allowtransparency="true" frameborder="0" width="238" height="67"></iframe>
+
 
                     </div>
 
