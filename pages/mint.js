@@ -78,10 +78,8 @@ export default function Mint() {
     const salebool = timeFromStart >= 0
     setSaleStarted(salebool)
 
-    const totalSupplyLegit = parseInt(await suitcaseContract.methods.totalSupply().call())
-    let addition = 9501
 
-    let totalSupply = totalSupplyLegit + addition
+    let totalSupply = parseInt(await suitcaseContract.methods.totalSupply().call())
 
     setTotalSupply(totalSupply)
 
